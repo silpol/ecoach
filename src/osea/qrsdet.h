@@ -53,11 +53,15 @@ MA 02143 USA).  For updates to this software, please visit our website
 #define MS450	((int) (450/MS_PER_SAMPLE + 0.5))
 #define MS1000	SAMPLE_RATE
 #define MS1500	((int) (1500/MS_PER_SAMPLE))
-#define DERIV_LENGTH	MS10
-#define LPBUFFER_LGTH ((int) (2*MS25))
-#define HPBUFFER_LGTH MS125
+/*#define DERIV_LENGTH	MS10 */
+#define DERIV_LENGTH	3
+/*#define LPBUFFER_LGTH ((int) (2*MS25)) */
+#define LPBUFFER_LGTH	16
+/*#define HPBUFFER_LGTH MS125 */
+#define HPBUFFER_LGTH	38
 
-#define WINDOW_WIDTH	MS80			// Moving window integration width.
+/*#define WINDOW_WIDTH	MS80 */			// Moving window integration width.
+#define WINDOW_WIDTH	24
 #define	FILTER_DELAY (int) (((double) DERIV_LENGTH/2) + ((double) LPBUFFER_LGTH/2 - 1) + (((double) HPBUFFER_LGTH-1)/2) + PRE_BLANK)  // filter delays plus 200 ms blanking delay
 #define DER_DELAY	WINDOW_WIDTH + FILTER_DELAY + MS100
 
