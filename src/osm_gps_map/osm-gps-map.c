@@ -2000,6 +2000,8 @@ osm_gps_map_source_get_friendly_name(OsmGpsMapSource_t source)
             return _("None");
         case OSM_GPS_MAP_SOURCE_OPENSTREETMAP:
             return _("OpenStreetMap");
+        case OSM_GPS_MAP_SOURCE_OPENCYCLEMAP:
+            return _("OpenCycleMap");
         case OSM_GPS_MAP_SOURCE_MAPS_FOR_FREE:
             return _("Maps-For-Free");
         case OSM_GPS_MAP_SOURCE_GOOGLE_STREET:
@@ -2035,6 +2037,8 @@ osm_gps_map_source_get_repo_uri(OsmGpsMapSource_t source)
             return "none://";
         case OSM_GPS_MAP_SOURCE_OPENSTREETMAP:
             return OSM_REPO_URI;
+        case OSM_GPS_MAP_SOURCE_OPENCYCLEMAP:
+            return "http://tile.thunderforest.com/cycle/#Z/#X/#Y.png";	  
         case OSM_GPS_MAP_SOURCE_MAPS_FOR_FREE:
             return "http://maps-for-free.com/layer/relief/z#Z/row#Y/#Z_#X-#Y.jpg";
         case OSM_GPS_MAP_SOURCE_GOOGLE_STREET:
@@ -2066,6 +2070,7 @@ osm_gps_map_source_get_image_format(OsmGpsMapSource_t source)
         case OSM_GPS_MAP_SOURCE_OVIMAPS_NORMAL:
         case OSM_GPS_MAP_SOURCE_OVIMAPS_HYBRID:
         case OSM_GPS_MAP_SOURCE_OVIMAPS_TRANSIT:
+	case OSM_GPS_MAP_SOURCE_OPENCYCLEMAP:
             return "png";
         case OSM_GPS_MAP_SOURCE_GOOGLE_STREET:
         case OSM_GPS_MAP_SOURCE_VIRTUAL_EARTH_STREET:
@@ -2091,6 +2096,7 @@ osm_gps_map_source_get_max_zoom(OsmGpsMapSource_t source)
 {
     switch(source) {
         case OSM_GPS_MAP_SOURCE_NULL:
+        case OSM_GPS_MAP_SOURCE_OPENCYCLEMAP
             return 18;
         case OSM_GPS_MAP_SOURCE_OPENSTREETMAP:
             return OSM_MAX_ZOOM;
