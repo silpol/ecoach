@@ -1757,6 +1757,7 @@ static HildonAppMenu *create_menu (MapView *self)
    const gchar* maps [] = {
   _("Open Street Map"),
   _("Open Cycle Map"),
+  _("MapQuest Open Aerial"),
   _("Maps For Free"),
   _("Google Street"),
   _("Virtual Earth Street"),
@@ -1869,6 +1870,7 @@ select_map_source_cb (HildonButton *button, gpointer user_data)
        const gchar* maps [] = {
 	_("Open Street Map"),
 	_("Open Cycle Map"),
+	_("MapQuest Open Aerial"),
 	_("Maps For Free"),
 	_("Google Street"),
 	_("Virtual Earth Street"),
@@ -1892,7 +1894,7 @@ select_map_source_cb (HildonButton *button, gpointer user_data)
     HILDON_TOUCH_SELECTOR_SELECTION_MODE_SINGLE);
 
 
-    for( int j = 0;j<10;j++){
+    for( int j = 0;j<11;j++){
     hildon_touch_selector_append_text (HILDON_TOUCH_SELECTOR (selector),maps[j]);
     }
     hildon_touch_selector_set_active(HILDON_TOUCH_SELECTOR(selector),0,self->map_provider-1);
